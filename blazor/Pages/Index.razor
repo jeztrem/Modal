@@ -1,0 +1,34 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<div class="container-fluid">
+    <button class="btn btn-primary" @onclick="@(e=>localNavigate("index001"))">index001</button>
+    <button class="btn btn-primary" @onclick="@(e=>localNavigate("index002"))">index002</button>
+    <button class="btn btn-primary" @onclick="@(e=>localNavigate("index003"))">index003</button>
+    <button class="btn btn-primary" @onclick="@(e=>localNavigate("index003"))">index003</button>
+</div>
+<div class="container-fluid">
+    <ul>
+        <li><blazor.Components.Modal001 /></li>
+        <li><blazor.Components.Modal002 /></li>
+        <li><blazor.Components.Modal003 /></li>
+    </ul>
+</div>
+@code{
+
+    private void localNavigate(string value)
+    {
+        if (value == "index001")
+        {
+            NavigationManager.NavigateTo("/i001");
+        }
+        if (value == "index002")
+        {
+            NavigationManager.NavigateTo("/i002");
+        }
+        if (value == "index003")
+        {
+            NavigationManager.NavigateTo("/i003");
+        }
+    }
+}
